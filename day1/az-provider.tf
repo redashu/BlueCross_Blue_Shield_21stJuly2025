@@ -49,8 +49,20 @@ resource "azurerm_network_interface" "main" {
   ip_configuration {
     name                          = "testconfiguration1"
     subnet_id                     = azurerm_subnet.ashu-subnet.id
-    private_ip_address_allocation = "Dynamic"
+    private_ip_address_allocation = "Dynamic" # private IP with NIC
+    public_ip_address_id = azurerm_public_ip.name.id # attaching public ip with NIC
   }
+
+}
+
+# creating public ip address  
+resource "azurerm_public_ip" "name" {
+  
+  name = "ashu-publicip1"
+  resource_group_name = azurerm_resource_group.ashu-group.name
+  location = azurerm_resource_group.ashu-group.location
+  allocation_method = "Static"
+  sku = "Standard"
 }
 
 resource "azurerm_linux_virtual_machine" "example" {

@@ -106,3 +106,7 @@ azurerm_resource_group.ashu-group: Still creating... [00m10s elapsed]
 azurerm_resource_group.ashu-group: Creation complete after 14s [id=/subscriptions/ee075321-f9dd-42f2-a56a-2f0a5141d191/resourceGroups/ashu-group-tf]
 
 ```
+### understand 3 level namespace data in terraform resources 
+
+<img src="tfns1.png">
+

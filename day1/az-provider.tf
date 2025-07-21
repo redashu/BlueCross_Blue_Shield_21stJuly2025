@@ -21,3 +21,12 @@ resource "azurerm_resource_group" "ashu-group" {
   
 }
 
+# creating azure virtual network in azure cloud
+resource "azurerm_virtual_network" "ashu-example" {
+  name = "ashu-network"
+  address_space = ["172.16.0.0/16"] 
+  location = azurerm_resource_group.ashu-group.location 
+  resource_group_name = azurerm_resource_group.ashu-group.name 
+  depends_on = [azurerm_resource_group.ashu-group]  # optional but important
+}
+

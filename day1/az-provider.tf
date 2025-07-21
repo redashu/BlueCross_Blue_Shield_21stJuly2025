@@ -30,3 +30,11 @@ resource "azurerm_virtual_network" "ashu-example" {
   depends_on = [azurerm_resource_group.ashu-group]  # optional but important
 }
 
+# creating subnet 
+resource "azurerm_subnet" "ashu-subnet" {
+  name = "ashu-subnet"
+  resource_group_name = azurerm_resource_group.ashu-group.name 
+  virtual_network_name = azurerm_virtual_network.ashu-example.name 
+  address_prefixes = ["172.16.1.0/24"] 
+  depends_on = [azurerm_virtual_network.ashu-example]
+}

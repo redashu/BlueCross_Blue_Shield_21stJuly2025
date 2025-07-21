@@ -75,3 +75,34 @@ Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 thexyzcompany2022@cloudshell:~/ashu-tf-code (terraform-466505)$ 
 
 ```
+
+### to deploy 
+
+```
+terraform  apply 
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_resource_group.ashu-group will be created
+  + resource "azurerm_resource_group" "ashu-group" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "ashu-group-tf"
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+azurerm_resource_group.ashu-group: Creating...
+azurerm_resource_group.ashu-group: Still creating... [00m10s elapsed]
+azurerm_resource_group.ashu-group: Creation complete after 14s [id=/subscriptions/ee075321-f9dd-42f2-a56a-2f0a5141d191/resourceGroups/ashu-group-tf]
+
+```

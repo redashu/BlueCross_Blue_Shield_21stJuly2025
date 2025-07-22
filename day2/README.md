@@ -76,3 +76,7 @@ terraform plan -var="ashu_rsg=ashu_day2_rsg" -var="ashu_rsg_location=eastus"
 terraform  plan  -var-file=ashu_val.tfvars
  terraform  apply  -var-file=ashu_val.tfvars
 ```
+
+### more info about tfvars in terraform 
+
+<img src="tfvar2.png">

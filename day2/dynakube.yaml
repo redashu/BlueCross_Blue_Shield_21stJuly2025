@@ -1,0 +1,44 @@
+apiVersion: v1
+data:
+  apiToken: ZHQwYzAxLlhDSktDT0Q0RkZSS0NIUDI2NDdOTVNNVi5QU1pST1hBT0xXQzdWV0YyU0lKRUdUTzVOSUxWS1FFTlRPQTVGUkpNSlBUQjZZUUE1UFJLVzNZS1FONkZDR0la
+  dataIngestToken: ZHQwYzAxLlpUTlpSUU5NTDYzVjZXVkZZUEZUN1NTNC5INDJKNkNFR0FUREdPSEtRM0M3R1lSWklYVFhMMjZaSlNSSVRNUTZQTVAyVVNONFZXU0RVVFlDMkNTM0NLT0lC
+kind: Secret
+metadata:
+  name: ashu-dynatrace
+  namespace: dynatrace
+type: Opaque
+---
+apiVersion: dynatrace.com/v1beta4
+kind: DynaKube
+metadata:
+  name: ashu-dynatrace
+  namespace: dynatrace
+  annotations:
+    feature.dynatrace.com/k8s-app-enabled: "true"
+# Link to api reference for further information: https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+spec:
+  apiUrl: https://uvn44745.live.dynatrace.com/api
+  metadataEnrichment:
+    enabled: true
+  oneAgent:
+    cloudNativeFullStack:
+      tolerations:
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/master
+          operator: Exists
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/control-plane
+          operator: Exists
+  activeGate:
+    capabilities:
+      - routing
+      - kubernetes-monitoring
+      - debugging
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1.5Gi
+      limits:
+        cpu: 1000m
+        memory: 1.5Gi
+  logMonitoring: {}

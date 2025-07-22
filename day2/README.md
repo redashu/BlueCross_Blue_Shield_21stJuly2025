@@ -66,3 +66,13 @@ If not defined in `var.tf` file, you can pass default values inline:
 terraform plan -var="ashu_rsg=ashu_day2_rsg"
 terraform plan -var="ashu_rsg=ashu_day2_rsg" -var="ashu_rsg_location=eastus"
 ```
+
+## concept of storing variable with their values in tfvars file 
+
+<img src="tfvar1.png">
+
+
+```
+terraform  plan  -var-file=ashu_val.tfvars
+ terraform  apply  -var-file=ashu_val.tfvars
+```

@@ -40,3 +40,9 @@ resource "azurerm_subnet" "ashu-subnet" {
   depends_on = [azurerm_virtual_network.ashu-example]
 }
 
+
+output "ashu_azvm_ipaddress" {
+    description = "printing value IP address detail"
+    value = azurerm_linux_virtual_machine.example.private_ip_addresses
+  
+}

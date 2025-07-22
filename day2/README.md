@@ -90,3 +90,13 @@ terraform  apply  -var="azvm_user=adminuser" -var="azvm_ssh_key=$(cat ~/.ssh/id_
 )"
 
 ```
+
+## terraform output 
+
+```
+terraform  apply  -var="azvm_user=adminuser" -var="azvm_ssh_key=$(cat ~/.ssh/id_ed25519.pub)"
+terraform  output ashu_azvm_ipaddress
+tolist([
+  "172.16.1.4",
+])
+```

@@ -100,3 +100,11 @@ tolist([
   "172.16.1.4",
 ])
 ```
+
+### azure storage option 
+
+<img src="azst1.png">
+
+### azure disk options 
+
+<img src="azst2.png">

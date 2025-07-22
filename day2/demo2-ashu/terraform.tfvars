@@ -1,0 +1,5 @@
+resg_name = "ashu-tf-rsgnew"
+resg_location = "eastus"
+azvnet_name = "ashu-network"
+azvnet_addr = "172.16.0.0/16"
+azvm_name = "ashu-example-machine"

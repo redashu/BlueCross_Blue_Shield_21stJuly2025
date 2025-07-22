@@ -80,3 +80,13 @@ terraform  plan  -var-file=ashu_val.tfvars
 ### more info about tfvars in terraform 
 
 <img src="tfvar2.png">
+
+
+### running terraform with all variable cases
+
+```
+ssh-keygen
+terraform  apply  -var="azvm_user=adminuser" -var="azvm_ssh_key=$(cat ~/.ssh/id_ed25519.pub
+)"
+
+```

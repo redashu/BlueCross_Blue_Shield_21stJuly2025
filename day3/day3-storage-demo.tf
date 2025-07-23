@@ -49,6 +49,11 @@ output "storage_account_url" {
   
 }
 
+output "storage_account_web_url" {
+  value = azurerm_storage_account.example.primary_web_endpoint
+  
+}
+
 # storage account section
 resource "azurerm_storage_account" "example" {
   name                     = var.az_storage_account
@@ -66,4 +71,14 @@ resource "azurerm_storage_account_static_website" "example" {
   storage_account_id = azurerm_storage_account.example.id
   index_document     = "index.html"
   error_404_document = "404.html"
+}
+
+# creating blob storage 
+resource "azurerm_storage_blob" "example" {
+  name                   = "index.html"
+  storage_account_name   = azurerm_storage_account.example.name
+  storage_container_name = "$web"
+  type                   = "Block"
+  source_content = file("mypages/index.html")
+  content_type = "text/html"
 }

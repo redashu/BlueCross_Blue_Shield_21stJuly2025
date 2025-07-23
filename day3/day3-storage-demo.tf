@@ -82,3 +82,18 @@ resource "azurerm_storage_blob" "example" {
   source_content = file("mypages/index.html")
   content_type = "text/html"
 }
+
+# using for-each to create multiple blobs
+locals {
+  static_files = fileset("${path.module}/mypages", "*.html")
+}
+
+resource "azurerm_storage_blob" "example" {
+  for_each = {for file in local.static_files : file => file}
+  name                   = each.key
+  storage_account_name   = azurerm_storage_account.example.name
+  storage_container_name = "$web"
+  type                   = "Block"
+  source = "${path.module}/mypages/${each.key}"
+  content_type = "text/html"
+}

@@ -51,3 +51,11 @@ ashu-tf-day3/
 ```
 terraform fmt 
 ```
+
+### checking storage account 
+
+```
+terraform output storage_account_url
+"https://ashutoshhstacc.blob.core.windows.net/"
+thexyzcompany2022@cloudshell:~/ashu-tf-day3 (terraform-466505)$ 
+```

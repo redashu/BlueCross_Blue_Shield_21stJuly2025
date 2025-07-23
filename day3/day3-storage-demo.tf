@@ -43,6 +43,12 @@ data "azurerm_resource_group" "example" {
   name = "bluecross-group"
 }
 
+# output section
+output "storage_account_url" {
+    value = azurerm_storage_account.example.primary_blob_endpoint
+  
+}
+
 # storage account section
 resource "azurerm_storage_account" "example" {
   name                     = var.az_storage_account

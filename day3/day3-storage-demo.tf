@@ -59,3 +59,11 @@ resource "azurerm_storage_account" "example" {
   account_kind             = "StorageV2"
 
 }
+
+# enable static web  hosting 
+# creating static webhosting 
+resource "azurerm_storage_account_static_website" "example" {
+  storage_account_id = azurerm_storage_account.example.id
+  index_document     = "index.html"
+  error_404_document = "404.html"
+}

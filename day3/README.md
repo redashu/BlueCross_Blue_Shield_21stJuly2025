@@ -64,3 +64,6 @@ thexyzcompany2022@cloudshell:~/ashu-tf-day3 (terraform-466505)$
 
 <img src="loop.png">
 
+### provisioner in terraform 
+
+<img src="pro.png">

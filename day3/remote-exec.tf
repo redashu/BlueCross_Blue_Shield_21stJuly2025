@@ -124,11 +124,25 @@ resource "azurerm_linux_virtual_machine" "example" {
     sku       = "22_04-lts"
     version   = "latest"
   }
+
+  provisioner "file" {
+    source = "hello.sh"
+    destination = "/home/adminuser/hello.sh"
+
+    connection {
+       type = "ssh"
+       user = "adminuser"
+       password = "Redhat@12345"
+       host = azurerm_public_ip.example.ip_address # we need public IP 
+     }
+  }
   provisioner "remote-exec" {
     inline = [ 
         "sudo apt-get update -y",
         "sudo apt-get install vim apache2 -y",
-        "echo hello world"
+        "echo hello world",
+        "sudo chmod +x /home/adminuser/hello.sh",
+        "/home/adminuser/hello.sh"
      ]
      connection {
        type = "ssh"
@@ -139,5 +153,6 @@ resource "azurerm_linux_virtual_machine" "example" {
      }
     
   }
+  
 }
 

@@ -29,3 +29,8 @@ thexyzcompany2022@cloudshell:~$ az account show
   "isDefault": true,
 
 ```
+
+## understanding terraform.tfstate  Remote management 
+
+<img src="tfrm1.png">
+

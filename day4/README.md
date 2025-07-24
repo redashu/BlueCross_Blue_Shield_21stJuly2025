@@ -57,3 +57,18 @@ thexyzcompany2022@cloudshell:~/day5-ashu$ touch  modules/az-vnet/{var.tf,output.
 thexyzcompany2022@cloudshell:~/day5-ashu$ 
 
 ```
+
+## terraform cloud understanding 
+
+<img src="tfcloud1.png">
+
+### perform in terraform host -- see in cloud 
+
+```
+ 383  terraform login
+  384  ls
+  385  terraform init 
+  386  terraform plan 
+  387  terraform apply --auto-approve
+
+```

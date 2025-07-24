@@ -43,3 +43,17 @@ thexyzcompany2022@cloudshell:~$ az account show
   340  terraform plan 
   341  terraform apply --auto-approve 
 ```
+
+## Concept of module in terraform 
+
+<img src="module.png">
+
+### creating az-vnet module which we gonna use in az-vm
+
+```
+thexyzcompany2022@cloudshell:~/day5-ashu$ mkdir  modules
+thexyzcompany2022@cloudshell:~/day5-ashu$ mkdir  modules/az-vnet
+thexyzcompany2022@cloudshell:~/day5-ashu$ touch  modules/az-vnet/{var.tf,output.tf,main.tf}
+thexyzcompany2022@cloudshell:~/day5-ashu$ 
+
+```

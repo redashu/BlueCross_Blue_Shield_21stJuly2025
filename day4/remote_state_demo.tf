@@ -48,3 +48,18 @@ variable "container_name" {
   type    = string
   default = "ashutoshhcontainer"
 }
+
+# reosurces 
+resource "null_resource" "example" {
+
+  provisioner "local-exec" {
+    command = "echo 'Hello guys please perform labs if possible' >hello.txt"
+
+  }
+
+}
+
+output "file_info" {
+  value = "my file is ${path.module}/hello.txt"
+
+}

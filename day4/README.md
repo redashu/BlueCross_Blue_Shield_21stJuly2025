@@ -34,3 +34,12 @@ thexyzcompany2022@cloudshell:~$ az account show
 
 <img src="tfrm1.png">
 
+## some fix 
+
+```
+337  rm -rf .terraform*
+  338  ls
+  339  terraform init 
+  340  terraform plan 
+  341  terraform apply --auto-approve 
+```
